@@ -146,3 +146,33 @@ Stores date-related information for tracking changes over time.
 	•	Quarter: The quarter in which the date falls.
 	•	Is_Weekend: Whether the date falls on a weekend.
 
+## 4.⁠ ⁠Fact Tables
+
+Fact tables store transactional data and connect to multiple dimensions.
+
+fact_hospital_quality
+
+Stores quality-related hospital performance data.
+	•	Quality_Fact_SK: Surrogate key for quality fact records.
+	•	Facility_SK: Foreign key referencing dim_facility.
+	•	Measure_SK: Foreign key referencing dim_measure.
+	•	Date_SK: Foreign key referencing dim_date.
+	•	Score: The quality score of the measure.
+	•	Lower_Estimate: The lower confidence interval for the measure.
+	•	Higher_Estimate: The upper confidence interval for the measure.
+	•	Denominator: The number of cases considered.
+	•	Compared_to_National: Comparison of the hospital’s score with the national average.
+	•	Fact_Type: Classification of the record (e.g., Complication, Infection).
+
+fact_hospital_payment
+
+Stores financial transactions and payment data for hospitals.
+	•	Payment_Fact_SK: Surrogate key for the payment fact record.
+	•	Facility_SK: Foreign key referencing dim_facility.
+	•	Measure_SK: Foreign key referencing dim_measure.
+	•	Date_SK: Foreign key referencing dim_date.
+	•	Payment: The cost recorded for the service or procedure.
+	•	Lower_Estimate: The lower bound of the estimated payment range.
+	•	Higher_Estimate: The upper bound of the estimated payment range.
+	•	Denominator: The number of cases considered in the payment analysis.
+	•	Payment_Category: The type of payment measure recorded.
