@@ -98,3 +98,51 @@ Stores financial and payment data.
 	•	Lower_Estimate: The lower estimate for the cost range.
 	•	Higher_Estimate: The higher estimate for the cost range.
 
+## 3.⁠ ⁠Dimensional Model (Star Schema)
+
+The final structure optimized for analytics.
+
+dim_facility
+
+Stores detailed information about hospital facilities.
+	•	Facility_SK: Surrogate key for a hospital.
+	•	Facility_ID: The original hospital identifier.
+	•	Facility_Name: Name of the hospital.
+	•	Hospital_Type: Type of hospital (linked to dim_hospital_type).
+	•	Hospital_Ownership: Ownership category (linked to dim_hospital_ownership).
+	•	Emergency_Services: Whether emergency services are available.
+	•	Overall_Rating: The hospital’s overall performance rating.
+
+dim_hospital_type
+
+Stores hospital type classifications.
+	•	Type_SK: Surrogate key for hospital type.
+	•	Hospital_Type: The type classification (e.g., General, Specialty).
+
+dim_hospital_ownership
+
+Stores hospital ownership details.
+	•	Ownership_SK: Surrogate key for hospital ownership.
+	•	Hospital_Ownership: The ownership type (e.g., Government, Private).
+
+dim_measure
+
+Stores all quality, infection, and payment measures.
+	•	Measure_SK: Surrogate key for a healthcare measure.
+	•	Measure_ID: Unique identifier for the measure.
+	•	Measure_Name: Descriptive name of the measure.
+	•	Measure_Category: Classification of the measure (e.g., Complication, Infection, Payment).
+
+dim_date
+
+Stores date-related information for tracking changes over time.
+	•	Date_SK: Surrogate key for dates.
+	•	Date_Key: Actual date value.
+	•	Year: The year of the date.
+	•	Month: The month of the date.
+	•	Day: The day of the date.
+	•	Day_of_Week: The numeric value representing the day of the week.
+	•	Month_Name: The textual name of the month.
+	•	Quarter: The quarter in which the date falls.
+	•	Is_Weekend: Whether the date falls on a weekend.
+
