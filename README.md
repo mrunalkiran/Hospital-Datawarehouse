@@ -1,5 +1,13 @@
 # Hospital-Datawarehouse
 
+## Why snowflake?
+
+Snowflake was chosen for its cloud-based, fully managed architecture, which eliminates the need for manual infrastructure management while providing high scalability and performance. Its unique separation of compute and storage allows independent scaling of resources, ensuring cost efficiency and faster query execution for analytical workloads. Snowflake supports structured and semi-structured data formats such as CSV, JSON, and XML, making it ideal for integrating diverse healthcare datasets from multiple sources. Additionally, features like Time Travel and automatic failover provide robust data integrity and recovery options, which are crucial for handling sensitive hospital data. Built-in security mechanisms, including encryption and role-based access control, ensure compliance with healthcare industry regulations and safeguard confidential information.
+
+## Why python?
+
+Python was primarily used for loading datasets into Snowflake, streamlining the data ingestion process. Using Python scripts, we automated the transfer of large healthcare datasets from local storage or cloud sources into Snowflake, reducing manual effort and potential errors. The integration was achieved using libraries like snowflake-connector-python, which facilitated seamless connection and data transfer. Python’s automation capabilities ensured efficient batch uploads, making it easier to handle large volumes of hospital data. This approach allowed for a structured and reliable ETL pipeline, ensuring that raw data was successfully ingested into Snowflake before undergoing further transformations within the data warehouse.
+
 ## Data Dictionary
 ## 1.⁠ ⁠Staging Tables
 
