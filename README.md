@@ -63,3 +63,38 @@ Stores hospital payment and cost-related data.
 	•	Higher_Estimate: The upper bound of the estimated payment range.
 	•	Denominator: The number of cases considered for this payment measure.
 	•	Payment_Category: The category of the payment (e.g., inpatient, outpatient).
+
+## 2.⁠ ⁠Normalized Tables
+
+These tables store cleaned and structured data.
+
+hospital_general_information
+
+Holds detailed information about hospitals.
+	•	Facility_ID: Unique identifier for a hospital.
+	•	Facility_Name: Name of the hospital.
+	•	Hospital_Type: The type of hospital.
+	•	Hospital_Ownership: The entity that owns the hospital.
+	•	Emergency_Services: Indicates whether emergency services are available.
+	•	Hospital_Overall_Rating: The overall quality rating of the hospital.
+
+complications_and_deaths
+
+Stores data on hospital complications and mortality rates.
+	•	Facility_ID: The hospital associated with the record.
+	•	Measure_ID: The complication or death measure recorded.
+	•	Denominator: The number of cases for this measure.
+	•	Score: The performance score.
+	•	Lower_Estimate: The lower bound of the measure’s confidence interval.
+	•	Higher_Estimate: The upper bound of the measure’s confidence interval.
+	•	Compared_to_National: Indicates if the score is better, worse, or the same as the national average.
+
+payment_and_value_of_care
+
+Stores financial and payment data.
+	•	Facility_ID: The hospital linked to the payment record.
+	•	Payment_Measure_ID: The identifier for the financial measure.
+	•	Payment: The cost recorded for the procedure or service.
+	•	Lower_Estimate: The lower estimate for the cost range.
+	•	Higher_Estimate: The higher estimate for the cost range.
+
